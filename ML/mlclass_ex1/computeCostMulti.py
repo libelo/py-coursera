@@ -15,7 +15,7 @@ def computeCostMulti(X, y, theta):
     # Instructions: Compute the cost of a particular choice of theta
     #               You should set J to the cost.
 
-
+    J = 1/(2*m) * sum((X.dot(theta) - y)**2)
 
     # =========================================================================
 
