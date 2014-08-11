@@ -18,6 +18,10 @@ def plotData(x, y):
   #       appear as red crosses. Furthermore, you can make the
   #       markers larger by using plot(..., 'rx', markersize=10);
 
+  ax = fig.add_subplot(1,1,1) # 1,1,1은 꼭 붙여야 한다. 아니면 NonType
+  ax.scatter(x, y, marker = 'x', color = 'red', ) # markersize = 10는 없다.xlabel = 'x', ylabel = 'y'
+  # 아니 씨발 plot에는 markersize property가 있는데 scatter에는 없다? s다? 이런 욕나오네.
+  # fig가 아니라 ax에 scatter를 붙일 수 있다.
 
   # ============================================================
   return fig

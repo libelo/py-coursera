@@ -1,3 +1,6 @@
+# cd Users/libelo/documents/code/py-coursera/ML/mlclass_ex1
+# %pylab
+
 ## Machine Learning Online Class - Exercise 1: Linear Regression
 
 #  Instructions
@@ -38,16 +41,16 @@ from gradientDescent import gradientDescent
 
 ## ==================== Part 1: Basic Function ====================
 # Complete warmUpExercise.py
-print 'Running warmUpExercise ... '
-print '5x5 Identity Matrix: '
-print warmUpExercise()
+print('Running warmUpExercise ... ')
+print('5x5 Identity Matrix: ')
+print(warmUpExercise())
 
 print('Program paused. Press enter to continue.')
-raw_input()
+input()
 
 
 ## ======================= Part 2: Plotting =======================
-print 'Plotting Data ...'
+print('Plotting Data ...')
 data = loadtxt('./ex1data1.txt', delimiter=',')
 X = data[:, 0]; y = data[:, 1]
 m = len(y) # number of training examples
@@ -57,13 +60,14 @@ m = len(y) # number of training examples
 firstPlot = plotData(X, y)
 firstPlot.show()
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+
+input()
 
 
 
 ## =================== Part 3: Gradient descent ===================
-print 'Running Gradient Descent ...'
+print('Running Gradient Descent ...')
 
 X = column_stack((ones(m), data[:,0])) # Add a column of ones to x
 theta = zeros(2) # initialize fitting parameters
@@ -73,19 +77,19 @@ iterations = 1500
 alpha = 0.01
 
 # compute and display initial cost
-print computeCost(X, y, theta)
+print(computeCost(X, y, theta))
 
 # run gradient descent
 (theta, J_history) = gradientDescent(X, y, theta, alpha, iterations)
 #pdb.set_trace()
 
 # print theta to screen
-print 'Theta found by gradient descent: '
-print '%f %f \n' % (theta[0], theta[1])
+print('Theta found by gradient descent: ')
+print('%f %f \n' % (theta[0], theta[1]))
 
 # Plot the linear fit
-hold(True); # keep previous plot visible
-plot(X[:,1], X.dot(theta), '-')
+hold(True); # keep previous plot visible # not necessary
+plot(X[:,1], X.dot(theta), '-') # 좀 만져줘야지만 작동한다. plt라도 그렇다.
 legend(('Training data', 'Linear regression'))
 firstPlot.show()
 # not sure how to avoid overlaying any more plots on this figure - call figure()?
@@ -93,16 +97,16 @@ firstPlot.show()
 # Predict values for population sizes of 35,000 and 70,000
 predict1 = array([1, 3.5]).dot(theta)
 #pdb.set_trace()
-print 'For population = 35,000, we predict a profit of %f\n' % (predict1 * 10000.)
+print('For population = 35,000, we predict a profit of %f\n' % (predict1 * 10000.))
 predict2 = array([1, 7]).dot(theta)
-print 'For population = 70,000, we predict a profit of %f\n' % (predict2 * 10000.)
+print('For population = 70,000, we predict a profit of %f\n' % (predict2 * 10000.))
 
-print 'Program paused. Press enter to continue.\n'
-raw_input()
+print('Program paused. Press enter to continue.\n')
+input()
 
 
 ## ============= Part 4: Visualizing J(theta_0, theta_1) =============
-print 'Visualizing J(theta_0, theta_1) ...\n'
+print('Visualizing J(theta_0, theta_1) ...\n')
 
 # Grid over which we will calculate J
 theta0_vals = linspace(-10, 10, 100)
@@ -127,8 +131,8 @@ ax = Axes3D(fig)
 #pdb.set_trace()
 sX, sY = meshgrid(theta0_vals, theta1_vals)
 ax.plot_surface(sX, sY, J_vals, rstride=3, cstride=3, cmap=cm.jet, linewidth=0)
-xlabel('\\theta_0')
-ylabel('\\theta_1')
+xlabel('$\\theta_0$')
+ylabel('$\\theta_1$')
 fig.show()
 
 # Contour plot
@@ -136,12 +140,12 @@ fig = figure()
 # Plot J_vals as 20 contours spaced logarithmically between 0.01 and 1000
 contour(sX, sY, J_vals, logspace(-2, 2, 20))
 plot(theta[0], theta[1], 'rx', markersize=10, linewidth=2)
-xlabel('\\theta_0')
-ylabel('\\theta_1')
+xlabel(r'$\theta_0$')
+ylabel(r'$\theta_1$')
 fig.show()
 
-print 'Program paused. Press enter to continue. Note figures will disappear when Python process ends\n'
-raw_input()
+print('Program paused. Press enter to continue. Note figures will disappear when Python process ends\n')
+input()
 
 
 

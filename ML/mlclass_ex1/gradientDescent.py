@@ -22,7 +22,7 @@ def gradientDescent(X, y, theta, alpha, num_iters):
       #
       # use "pdb.set_trace()" to drop into the debugger at this point
 
-
+      theta -= alpha/m * dot(X.T, (dot(X, theta) - y).T)
 
 
       # ============================================================

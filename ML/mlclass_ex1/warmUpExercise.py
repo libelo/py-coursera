@@ -1,7 +1,7 @@
 from numpy import *
 
 def warmUpExercise():
-  #WARMUPEXERCISE Example function in octave
+  #WARMUPEXERCISE Example function in python
   #   A = WARMUPEXERCISE() is an example function that returns the 5x5 identity matrix
 
   A = array([])
@@ -11,7 +11,7 @@ def warmUpExercise():
   #               variable(s) to return in the last line of the file,
   #               so just set A accordingly. 
 
-
+  A = eye(5)
   
 
 
