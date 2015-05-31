@@ -37,7 +37,7 @@ from normalEqn import normalEqn
 
 ## ================ Part 1: Feature Normalization ================
 
-print 'Loading data...'
+print('Loading data ...')
 
 # load data
 data = loadtxt('./ex1data2.txt', delimiter=',')
@@ -46,15 +46,15 @@ y = data[:, 2]
 m = len(y)
 
 # Print out some data points
-print 'First 10 examples from the dataset:'
+print('First 10 examples from the dataset:')
 for i in range(10):
-    print ' x = [%.0f, %.0f], y = %.0f' % (X[i,0], X[i,1], y[i])
+    print(' x = [%.0f, %.0f], y = %.0f' % (X[i,0], X[i,1], y[i]))
 
 print('Program paused. Press enter to continue.')
-raw_input()
+input()
 
 # Scale features and set them to zero mean
-print 'Normalizing Features ...'
+print('Normalizing Features ...')
 
 X, mu, sigma = featureNormalize(X)
 
@@ -86,7 +86,7 @@ X = column_stack((ones(m), X))
 # Hint: At prediction, make sure you do the same feature normalization.
 #
 
-print 'Running gradient descent ...'
+print('Running gradient descent ...')
 
 # Choose some alpha value
 alpha = 0.01
@@ -104,9 +104,9 @@ ylabel('Cost J')
 fig.show()
 
 # Display gradient descent's result
-print 'Theta computed from gradient descent:'
-for t in theta: print t
-print
+print('Theta computed from gradient descent: ')
+for t in theta: print(t)
+print()
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 # ====================== YOUR CODE HERE ======================
@@ -117,14 +117,14 @@ price = 0 # You should change this
 
 # ============================================================
 
-print 'Predicted price of a 1650 sq-ft, 3 br house ' \
-      '(using gradient descent):\n $%f\n' %  price
+print('Predicted price of a 1650 sq-ft, 3 br house ' \
+      '(using gradient descent):\n $%f\n' %  price)
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## ================ Part 3: Normal Equations ================
-print 'Solving with normal equations...'
+print('Solving with normal equations...')
 
 # ====================== YOUR CODE HERE ======================
 # Instructions: The following code computes the closed form
@@ -149,9 +149,9 @@ X = column_stack((ones(m), X))
 theta = normalEqn(X, y)
 
 # Display normal equation's result
-print 'Theta computed from the normal equations:'
-for t in theta: print t
-print
+print('Theta computed from the normal equations:')
+for t in theta: print(t)
+print()
 
 
 # Estimate the price of a 1650 sq-ft, 3 br house
@@ -161,6 +161,6 @@ price = 0 # You should change this
 
 # ============================================================
 
-print 'Predicted price of a 1650 sq-ft, 3 br house ' \
-      '(using normal equations):\n $%f' % price
+print('Predicted price of a 1650 sq-ft, 3 br house ' \
+      '(using normal equations):\n $%f' % price)
 
