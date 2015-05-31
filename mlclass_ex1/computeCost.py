@@ -1,4 +1,3 @@
-import pdb
 from numpy import *
 
 def computeCost(X, y, theta):
