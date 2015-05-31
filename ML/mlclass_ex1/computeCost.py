@@ -18,13 +18,7 @@ def computeCost(X, y, theta):
 
   # use "pdb.set_trace()" to drop into the debugger at this point
   
-  a = dot(X, theta) # theta는 그냥 array다. ndim은 1이다. 그래도 dot계산이 되는구나. column vector로 해석하는구나.
-  b = a - y
-  c = b**2
-  d = sum(c)
-  e = d/(2*m)
-  J = e
-
+  
   
   # =========================================================================
 
