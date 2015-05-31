@@ -81,7 +81,7 @@ theta, J_history = gradientDescent(X, y, theta, alpha, iterations)
 
 # print theta to screen
 print('Theta found by gradient descent: ',)
-print('{0:f} {1:f}'.format(theta[0], theta[1]))
+print('%f %f ' % (theta[0], theta[1]))
 
 # Plot the linear fit
 hold(True) # keep previous plot visible
@@ -93,9 +93,9 @@ firstPlot.show()
 # Predict values for population sizes of 35,000 and 70,000
 predict1 = array([1, 3.5]).dot(theta)
 #pdb.set_trace()
-print('For population = 35,000, we predict a profit of {0:f}'.format(predict1 * 10000))
+print('For population = 35,000, we predict a profit of %f' % (predict1 * 10000))
 predict2 = array([1, 7]).dot(theta)
-print('For population = 70,000, we predict a profit of {0:f}'.format(predict2 * 10000))
+print('For population = 70,000, we predict a profit of %f' % (predict2 * 10000))
 
 print('Program paused. Press enter to continue.')
 input()

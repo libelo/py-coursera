@@ -118,7 +118,7 @@ price = 0 # You should change this
 # ============================================================
 
 print('Predicted price of a 1650 sq-ft, 3 br house ' \
-      '(using gradient descent):\n $%f\n' %  price)
+      '(using gradient descent):\n $%f' % price)
 
 print('Program paused. Press enter to continue.')
 input()
