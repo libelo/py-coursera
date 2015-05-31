@@ -124,6 +124,7 @@ print('Program paused. Press enter to continue.')
 input()
 
 ## ================ Part 3: Normal Equations ================
+
 print('Solving with normal equations...')
 
 # ====================== YOUR CODE HERE ======================

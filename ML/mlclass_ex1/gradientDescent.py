@@ -28,6 +28,5 @@ def gradientDescent(X, y, theta, alpha, num_iters):
 
         # Save the cost J in every iteration
         J_history[iteration] = computeCost(X, y, theta)
-        #J_history(iter)
 
     return theta, J_history
