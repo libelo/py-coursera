@@ -77,19 +77,19 @@ def submit(part_id=None):
         part_id = prompt_part()
 
     if not is_valid_part(part_id):
-        print '!! Invalid homework part selected.'
-        print '!! Expected an integer from 1 to %d.' % (len(part_names)+1)
-        print '!! Submission Cancelled'
+        print('!! Invalid homework part selected.')
+        print('!! Expected an integer from 1 to %d.' % (len(part_names)+1))
+        print('!! Submission Cancelled')
         return
 
     login, password = login_prompt()
     if not login:
-        print '!! Submission Cancelled'
+        print('!! Submission Cancelled')
         return
 
     submit_parts = [part_id] if part_id <= len(part_names) else range(1,len(part_names)+1)
 
-    print '\n== Connecting to ml-class ... '
+    print('\n== Connecting to ml-class ... ')
 
     for part_id in submit_parts:
         # Submit this part
@@ -97,14 +97,14 @@ def submit(part_id=None):
         login, ch, signature, auxstring = get_challenge(login, part_id)
         if not login or not ch or not signature:
             # Some error occured, error string in first return element.
-            print '\n!! Error: %s\n' % login
+            print('\n!! Error: %s\n' % login)
             return
 
         ch_resp = challenge_response(login, password, ch)
         result, s = submit_solution(login, ch_resp, part_id, output(part_id, auxstring), source(part_id), signature)
-        print '\n== [ml-class] Submitted Homework %s - Part %d - %s' % (
-                homework_id, part_id, part_names[part_id-1])
-        print '== %s' % s.strip()
+        print('\n== [ml-class] Submitted Homework %s - Part %d - %s' % (
+                homework_id, part_id, part_names[part_id-1]))
+        print('== %s' % s.strip())
 
 # ============================== HELPERS ==============================
 
@@ -121,10 +121,10 @@ def sprintf(fmt, arg):
         return fmt % arg
 
 def prompt_part():
-    print '== Select which part(s) to submit:'
+    print('== Select which part(s) to submit:')
     for i, name in enumerate(part_names):
-        print '==   %d) %s [%s]' % (i+1, name, srcs[i])
-    print '==   %d) All of the above\n==' % (len(part_names)+1)
+        print('==   %d) %s [%s]' % (i+1, name, srcs[i]))
+    print('==   %d) All of the above\n==' % (len(part_names)+1))
     selpart = raw_input('Enter your choice [1-%d]:' % (len(part_names)+1))
     try:
         return int(selpart)
