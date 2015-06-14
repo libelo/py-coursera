@@ -1,6 +1,5 @@
 from numpy import *
 from scipy import optimize
-
 from lrCostFunction import lrCostFunction
 
 def oneVsAll(X, y, num_labels, lambda_):
@@ -13,7 +12,8 @@ def oneVsAll(X, y, num_labels, lambda_):
     #   to the classifier for label i
 
     # Some useful variables
-    m, n = shape(X)
+    m = shape(X, 0)
+    n = shape(X, 1)
 
     # You need to return the following variables correctly
     all_theta = zeros((num_labels, n + 1))
@@ -50,6 +50,15 @@ def oneVsAll(X, y, num_labels, lambda_):
 
 
 
+
+
+
+
+
+
+
+
     # =========================================================================
+
 
     return all_theta

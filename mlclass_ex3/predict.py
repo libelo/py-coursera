@@ -1,5 +1,4 @@
 from numpy import *
-
 from sigmoid import sigmoid
 
 def predict(Theta1, Theta2, X):
@@ -12,7 +11,7 @@ def predict(Theta1, Theta2, X):
     num_labels = size(Theta2, 0)
 
     # You need to return the following variables correctly
-    p = zeros(m)
+    p = zeros(size(X, 0))
 
     # ====================== YOUR CODE HERE ======================
     # Instructions: Complete the following code to make predictions using
@@ -27,6 +26,13 @@ def predict(Theta1, Theta2, X):
 
 
 
+
+
+
+
+
+
     # =========================================================================
+
 
     return p

@@ -1,5 +1,4 @@
 from numpy import *
-
 from sigmoid import sigmoid
 
 def lrCostFunction(theta, X, y, lambda_):
@@ -39,6 +38,12 @@ def lrCostFunction(theta, X, y, lambda_):
     #           temp[0] = 0    # because we don't add anything for j = 0
     #           grad = grad + YOUR_CODE_HERE (using the temp variable)
     #
+
+
+
+
+
+
 
 
 

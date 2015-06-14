@@ -9,7 +9,7 @@ def displayData(X, example_width=None):
 
     # Set example_width automatically if not passed in
     if example_width is None:
-        example_width = int(sqrt(size(X, 1))+0.5)
+        example_width = round(sqrt(size(X, 1)))
 
     # Compute rows, cols
     m, n = shape(X)

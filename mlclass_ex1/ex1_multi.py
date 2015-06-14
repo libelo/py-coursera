@@ -24,6 +24,7 @@
 #  learning rates).
 #
 
+## Initialization
 from numpy import *
 from matplotlib.pyplot import *
 from mpl_toolkits.mplot3d import axes3d, Axes3D
@@ -31,9 +32,6 @@ from mpl_toolkits.mplot3d import axes3d, Axes3D
 from featureNormalize import featureNormalize
 from gradientDescentMulti import gradientDescentMulti
 from normalEqn import normalEqn
-
-
-## Initialization
 
 ## ================ Part 1: Feature Normalization ================
 

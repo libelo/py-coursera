@@ -16,6 +16,7 @@
 #  or any other files other than those mentioned above.
 #
 
+## Initialization
 from numpy import *
 from scipy.io import loadmat
 from matplotlib.pyplot import *
@@ -35,7 +36,7 @@ num_labels = 10           # 10 labels, from 1 to 10
 #
 
 # Load Training Data
-print 'Loading and Visualizing Data ...'
+print('Loading and Visualizing Data ...')
 
 ex3data1 = loadmat('ex3data1.mat')
 X = ex3data1['X']
@@ -43,20 +44,20 @@ y = ex3data1['y'].ravel()
 m = size(X, 0)
 
 # Randomly select 100 data points to display
-sel = random.permutation(m)
+sel = random.permutation(size(X, 0))
 
 fig = figure()
 displayData(X[sel[:100], :])
 fig.show()
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## ================ Part 2: Loading Pameters ================
 # In this part of the exercise, we load some pre-initialized
 # neural network parameters.
 
-print '\nLoading Saved Neural Network Parameters ...'
+print('\nLoading Saved Neural Network Parameters ...')
 
 # Load the weights into variables Theta1 and Theta2
 ex3weights = loadmat('ex3weights.mat')
@@ -71,10 +72,10 @@ Theta2 = ex3weights['Theta2']
 
 pred = predict(Theta1, Theta2, X)
 
-print '\nTraining Set Accuracy: %f' % (mean(pred == y) * 100)
+print('\nTraining Set Accuracy: %f' % (mean(pred == y) * 100))
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 #  To give you an idea of the network's output, you can also run
 #  through the examples one at the a time to see what it is predicting.
@@ -85,13 +86,14 @@ fig = figure()
 
 for i in rp:
     # Display
-    print '\nDisplaying Example Image'
+    print('\nDisplaying Example Image')
     displayData(column_stack(X[i, :]))
     fig.show()
 
     pred = predict(Theta1, Theta2, column_stack(X[i,:]))
-    print '\nNeural Network Prediction: %d (digit %d)' % (pred, pred % 10)
+    print('\nNeural Network Prediction: %d (digit %d)' % (pred, pred % 10))
 
     # Pause
-    print 'Program paused. Press enter to continue, ^C to exit.'
-    raw_input()
+    print('Program paused. Press enter to continue, ^C to exit.')
+    input()
+

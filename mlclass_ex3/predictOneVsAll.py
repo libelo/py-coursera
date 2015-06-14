@@ -14,7 +14,7 @@ def predictOneVsAll(all_theta, X):
     num_labels = size(all_theta, 0)
 
     # You need to return the following variables correctly
-    p = zeros(m)
+    p = zeros(size(X, 0))
 
     # Add ones to the X data matrix
     X = column_stack((ones(m), X))
@@ -34,6 +34,11 @@ def predictOneVsAll(all_theta, X):
 
 
 
+
+
+
+
     # =========================================================================
+
 
     return p

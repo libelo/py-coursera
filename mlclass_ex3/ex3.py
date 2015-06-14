@@ -16,6 +16,7 @@
 #  or any other files other than those mentioned above.
 #
 
+## Initialization
 from numpy import *
 from scipy.io import loadmat
 from matplotlib.pyplot import *
@@ -35,7 +36,7 @@ num_labels = 10           # 10 labels, from 1 to 10
 #
 
 # Load Training Data
-print 'Loading and Visualizing Data ...'
+print('Loading and Visualizing Data ...')
 
 ex3data1 = loadmat('ex3data1.mat') # training data stored in arrays X, y
 X = ex3data1['X']
@@ -49,8 +50,8 @@ fig = figure()
 displayData(X[sel[:100], :])
 fig.show()
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## ============ Part 2: Vectorize Logistic Regression ============
 #  In this part of the exercise, you will reuse your logistic regression
@@ -60,18 +61,18 @@ raw_input()
 #  digit dataset.
 #
 
-print '\nTraining One-vs-All Logistic Regression...'
+print('\nTraining One-vs-All Logistic Regression...')
 
 lambda_ = 0.1
 all_theta = oneVsAll(X, y, num_labels, lambda_)
 
 print 'Program paused. Press enter to continue.'
-raw_input()
+input()
 
 
 ## ================ Part 3: Predict for One-Vs-All ================
 #  After ...
 pred = predictOneVsAll(all_theta, X)
 
-print 'Training Set Accuracy: %f' % (mean(pred == y) * 100)
+print('Training Set Accuracy: %f' % (mean(pred == y) * 100))
 

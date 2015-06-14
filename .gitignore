@@ -29,3 +29,7 @@ pip-log.txt
 ml.sublime-workspace
 
 .DS_Store
+
+*.sublime-project
+
+*.sublime-project
