@@ -1,6 +1,6 @@
 from numpy import *
 from matplotlib.pyplot import *
-from mlclass_ex2 import *
+from mapFeature import mapFeature
 
 def plotDecisionBoundary(theta, X, y):
     #PLOTDECISIONBOUNDARY Plots the data points X and y into a new figure with
