@@ -28,8 +28,9 @@ def featureNormalize(X):
     # Hint: You might find the 'mean' and 'std' functions useful.
     #
 
-
-
+    mu = X.mean(0)
+    sigma = X.std(0, ddof=1)
+    X_norm = (X - mu)/sigma
 
     # ============================================================
 

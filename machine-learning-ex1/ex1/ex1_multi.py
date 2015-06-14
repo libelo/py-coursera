@@ -110,7 +110,7 @@ print()
 # ====================== YOUR CODE HERE ======================
 # Recall that the first column of X is all-ones. Thus, it does
 # not need to be normalized.
-price = 0 # You should change this
+price = theta.dot(concatenate([array([1]), (array([1650, 3]) - mu) / sigma])) # You should change this
 
 
 # ============================================================
@@ -155,7 +155,7 @@ print()
 
 # Estimate the price of a 1650 sq-ft, 3 br house
 # ====================== YOUR CODE HERE ======================
-price = 0 # You should change this
+price = array([1, 1650, 3]).dot(theta) # You should change this
 
 
 # ============================================================

@@ -20,7 +20,7 @@ def gradientDescentMulti(X, y, theta, alpha, num_iters):
         #       of the cost function (computeCostMulti) and gradient here.
         #
 
-
+        theta -= alpha/m * X.T.dot(X.dot(theta) - y)
 
         # ============================================================
 

@@ -20,7 +20,8 @@ def plotData(x, y):
     fig = figure()    
 
 
-
+    ax = fig.add_subplot(1,1,1)
+    ax.scatter(x, y, marker = 'x', color = 'red', )
     
 
 
