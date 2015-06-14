@@ -1,13 +1,12 @@
 py-coursera
 ===========
 
-Python framework for Coursera [PGM](https://www.coursera.org/course/pgm) and
-[ML](https://www.coursera.org/course/ml) homeworks
+Python framework for Coursera [ML](https://www.coursera.org/course/ml) homeworks
 
-The Coursera PGM and ML classes use [Octave](http://www.gnu.org/software/octave/) 
+The Coursera ML class uses [Octave](http://www.gnu.org/software/octave/) 
 for their homework assignments.Arguably Octave is great for novice students
 getting started quickly with a single package that allows them to quickly
-manipulate matrices etc.  However many students in the PGM and ML courses
+manipulate matrices etc. However many students in the PGM and ML courses
 have wondered if there couldn't be a Python alternative based on
 [SciPy](http://www.scipy.org/) or other similar frameworks for Python.
 
