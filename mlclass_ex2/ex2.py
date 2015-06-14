@@ -39,8 +39,8 @@ y = data[:, 2]
 # We start the exercise by first plotting the data to understand the
 #  the problem we are working with.
 
-print 'Plotting data with + indicating (y = 1) examples and o '\
-      'indicating (y = 0) examples.\n'
+print('Plotting data with + indicating (y = 1) examples and o ' \
+      'indicating (y = 0) examples.\n')
 
 fig = plotData(X, y)
 
@@ -55,8 +55,8 @@ legend(('Admitted', 'Not admitted'), numpoints=1)
 fig.show()
 hold(False)
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 
 ## ============ Part 2: Compute Cost and Gradient ============
 #  In this part of the exercise, you will implement the cost and gradient
@@ -75,12 +75,12 @@ initial_theta = zeros(n + 1)
 # Compute and display initial cost and gradient
 cost, grad = costFunction(initial_theta, X, y)
 
-print 'Cost at initial theta (zeros): ', cost
-print 'Gradient at initial theta (zeros):'
-print grad
+print('Cost at initial theta (zeros): ', cost)
+print('Gradient at initial theta (zeros):')
+print(grad)
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 
 
 ## ============= Part 3: Optimizing using fminunc  =============
@@ -96,8 +96,8 @@ theta = res.x
 cost = res.fun
 
 # Print theta to screen
-print 'Cost at theta found by minimize: ', cost
-print 'theta:', theta
+print('Cost at theta found by minimize: ', cost)
+print('theta:', theta)
 
 # Plot Boundary
 fig = plotDecisionBoundary(theta, X, y)
@@ -109,8 +109,8 @@ ylabel('Exam 2 score')
 hold(False)
 fig.show()
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 
 
 ## ============== Part 4: Predict and Accuracies ==============
@@ -128,14 +128,14 @@ raw_input()
 #  and score 85 on exam 2
 
 prob = sigmoid(dot([1, 45, 85],theta))
-print 'For a student with scores 45 and 85, we predict an admission ' \
-      'probability of %f\n' % prob
+print('For a student with scores 45 and 85, we predict an admission ' \
+      'probability of %f\n' % prob)
 
 # Compute accuracy on our training set
 p = predict(theta, X)
 
-print 'Train Accuracy: %f\n' % (mean(p == y) * 100)
+print('Train Accuracy: %f\n' % (mean(p == y) * 100))
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 

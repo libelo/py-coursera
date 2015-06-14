@@ -75,10 +75,10 @@ lambda_ = 1.
 # regression
 cost, grad = costFunctionReg(initial_theta, X, y, lambda_)
 
-print 'Cost at initial theta (zeros):', cost
+print('Cost at initial theta (zeros):', cost)
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 
 
 ## ============= Part 2: Regularization and Accuracies =============
@@ -120,6 +120,6 @@ fig.show()
 # Compute accuracy on our training set
 p = predict(theta, X)
 
-print 'Train Accuracy: %f\n' % (mean(p == y) * 100)
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('Train Accuracy: %f\n' % (mean(p == y) * 100))
+print('\nProgram paused. Press enter to continue.')
+input()
