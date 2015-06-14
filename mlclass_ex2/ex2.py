@@ -40,7 +40,7 @@ y = data[:, 2]
 #  the problem we are working with.
 
 print('Plotting data with + indicating (y = 1) examples and o ' \
-      'indicating (y = 0) examples.\n')
+      'indicating (y = 0) examples.')
 
 fig = plotData(X, y)
 
@@ -61,7 +61,7 @@ input()
 ## ============ Part 2: Compute Cost and Gradient ============
 #  In this part of the exercise, you will implement the cost and gradient
 #  for logistic regression. You neeed to complete the code in
-#  costFunction.m
+#  costFunction.py
 
 #  Setup the data matrix appropriately, and add ones for the intercept term
 m, n = shape(X)
@@ -75,7 +75,7 @@ initial_theta = zeros(n + 1)
 # Compute and display initial cost and gradient
 cost, grad = costFunction(initial_theta, X, y)
 
-print('Cost at initial theta (zeros): ', cost)
+print('Cost at initial theta (zeros): %f' % cost)
 print('Gradient at initial theta (zeros):')
 print(grad)
 
@@ -96,8 +96,9 @@ theta = res.x
 cost = res.fun
 
 # Print theta to screen
-print('Cost at theta found by minimize: ', cost)
-print('theta:', theta)
+print('Cost at theta found by minimize: %f' % cost)
+print('theta:')
+print(theta)
 
 # Plot Boundary
 fig = plotDecisionBoundary(theta, X, y)
@@ -134,7 +135,7 @@ print('For a student with scores 45 and 85, we predict an admission ' \
 # Compute accuracy on our training set
 p = predict(theta, X)
 
-print('Train Accuracy: %f\n' % (mean(p == y) * 100))
+print('Train Accuracy: %f' % (mean(p == y) * 100))
 
 print('\nProgram paused. Press enter to continue.')
 input()

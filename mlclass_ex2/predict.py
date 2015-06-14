@@ -6,7 +6,7 @@ def predict(theta, X):
     #   p = PREDICT(theta, X) computes the predictions for X using a
     #   threshold at 0.5 (i.e., if sigmoid(theta'*x) >= 0.5, predict 1)
 
-    m = size(X, 1) # Number of training examples
+    m = size(X, 0) # Number of training examples
 
     # You need to return the following variables correctly
     p = zeros(m)
@@ -16,6 +16,9 @@ def predict(theta, X):
     #               your learned logistic regression parameters.
     #               You should set p to a vector of 0's and 1's (or booleans)
     #
+
+
+
 
 
 

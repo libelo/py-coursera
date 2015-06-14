@@ -30,16 +30,21 @@ def plotDecisionBoundary(theta, X, y):
         legend(('Admitted', 'Not admitted', 'Decision Boundary'), numpoints=1)
         axis([30, 100, 30, 100])
     else:
+        # Here is the grid range
         u = linspace(-1, 1.5, 50)
+        v = linspace(-1, 1.5, 50)
 
+        z = zeros((len(u), len(v)))
         # Evaluate z = theta*x over the grid
-        z = frompyfunc(lambda x,y: mapFeature(x,y).dot(theta), 2, 1).outer(u,u)
+        for i in range(len(u)):
+            for j in range(len(v)):
+                z[i,j] = mapFeature(u[i], v[j]) * theta
 
         z = z.T # important to transpose z before calling contour
 
         # Plot z = 0
         # Notice you need to specify the level as [0]
-        contour(u, u, z, [0], linewidth=2)
+        contour(u, v, z, [0], linewidth=2)
 
     hold(False)
 
