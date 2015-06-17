@@ -1,12 +1,14 @@
+from numpy import *
 from os import remove
 from os.path import isfile
 from urllib.request import urlopen
+from urllib.parse import urlencode
 from pickle import load, dump
 import json
 
 def submitWithConfiguration(conf):
 
-	parts = parts(conf)
+	parts = parts_(conf)
 
 	print('== Submitting solutions | %s...' % conf['itemName'])
 
@@ -17,7 +19,7 @@ def submitWithConfiguration(conf):
 	else:
 		email, token = promptToken('', '', tokenFile)
 
-	if token == ''
+	if token == '':
 		print('!! Submission Cancelled')
 		return
 
@@ -58,7 +60,7 @@ def isValidPartOptionIndex(partOptions, i):
 
 def submitParts(conf, email, token, parts):
 	body = makePostBody(conf, email, token, parts)
-	submissionUrl = submissionUrl()
+	submissionUrl = submissionUrl_()
 	params = urlencode({'jsonBody': body}).encode()
 	responseBody = urlopen(submissionUrl, data=params)
 	return json.loads(responseBody.read().decode())
@@ -78,16 +80,15 @@ def makePartsStruct(conf, parts):
 	partsStruct = {}
 	for part in parts:
 		partId = part['id']
-		# partId itself is a valid field name in Python
-		fieldName = partId
+		fieldName = makeValidFieldName(partId)
 		outputStruct = {}
-		outputStruct['output'] = conf.output(partId)
+		outputStruct['output'] = conf['output'](partId)
 		partsStruct[fieldName] = outputStruct
 	return partsStruct
 
-def parts(conf):
+def parts_(conf):
 	parts = []
-	for partArray in conf.partArrays:
+	for partArray in conf['partArrays']:
 		part = {}
 		part['id'] = partArray[0]
 		part['sourceFiles'] = partArray[1]
@@ -117,15 +118,21 @@ def showFeedback(parts, response):
 # Service configuration
 #
 ###############################################################################
-def submissionUrl():
-  return 'https://www-origin.coursera.org/api/onDemandProgrammingImmediateFormSubmissions.v1'
+def submissionUrl_():
+	return 'https://www-origin.coursera.org/api/onDemandProgrammingImmediateFormSubmissions.v1'
 
 # ============================== HELPERS ==============================
 
-def sprintf(format, *arg):
+def sprintf(formatSpec, *args):
     "emulates (part of) Octave sprintf function"
-	if len(arg) == 1 and isinstance(arg[0], (ndarray, list)):
-		# concatenates all elements, column by column
-        return ''.join(format % e for e in array(arg[0]).ravel('F'))
+    if len(args) == 1:
+        args = args[0]
+        if type(args) == tuple:
+            args = args[0]
+    if type(args) == ndarray:
+        return ''.join(formatSpec % e for e in args.ravel('F'))
     else:
-		return format % arg
+        return formatSpec % args
+        
+def makeValidFieldName(str_):
+	return str_
