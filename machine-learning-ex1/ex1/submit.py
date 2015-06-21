@@ -63,7 +63,7 @@ def output(partId):
 	if partId == '1':
 		return sprintf('%0.5f ', warmUpExercise())
 	elif partId == '2':
-		return sprintf('%0.5f ', computeCost(X1, Y1, array([0.5 -0.5])))
+		return sprintf('%0.5f ', computeCost(X1, Y1, array([0.5, -0.5])))
 	elif partId == '3':
 		return sprintf('%0.5f ', gradientDescent(X1, Y1, array([0.5, -0.5]), 0.01, 10))
 	elif partId == '4':
@@ -71,7 +71,7 @@ def output(partId):
 	elif partId == '5':
 		return sprintf('%0.5f ', computeCostMulti(X2, Y2, array([0.1, 0.2, 0.3, 0.4])))
 	elif partId == '6':
-		return sprintf('%0.5f ', gradientDescentMulti(X2, Y2, array([-0.1 -0.2 -0.3 -0.4]), 0.01, 10))
+		return sprintf('%0.5f ', gradientDescentMulti(X2, Y2, array([-0.1, -0.2, -0.3, -0.4]), 0.01, 10))
 	elif partId == '7':
 		return sprintf('%0.5f ', normalEqn(X2, Y2))
 
