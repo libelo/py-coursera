@@ -1,5 +1,6 @@
 from numpy import *
 from matplotlib.pyplot import *
+from plotData import plotData
 from mapFeature import mapFeature
 
 def plotDecisionBoundary(theta, X, y):
