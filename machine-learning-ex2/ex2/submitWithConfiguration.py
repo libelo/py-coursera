@@ -32,8 +32,8 @@ def submitWithConfiguration(conf):
 		print('!! Please try again later.')
 		return
 
-	if 'message' in response:
-		print('!! Submission failed: %s' % response['message'])
+	if 'errorMessage' in response:
+		print('!! Submission failed: %s' % response['errorMessage'])
 	else:
 		showFeedback(parts, response)
 		dump((email, token), open(tokenFile, 'wb'))
