@@ -12,8 +12,8 @@ def oneVsAll(X, y, num_labels, lambda_):
     #   to the classifier for label i
 
     # Some useful variables
-    m = shape(X, 0)
-    n = shape(X, 1)
+    m = size(X, 0)
+    n = size(X, 1)
 
     # You need to return the following variables correctly
     all_theta = zeros((num_labels, n + 1))
