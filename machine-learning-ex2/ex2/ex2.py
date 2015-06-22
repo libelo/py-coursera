@@ -77,7 +77,7 @@ cost, grad = costFunction(initial_theta, X, y)
 
 print('Cost at initial theta (zeros): %f' % cost)
 print('Gradient at initial theta (zeros):')
-print(grad)
+for g in grad: print(' %f ' % g)
 
 print('\nProgram paused. Press enter to continue.')
 input()
@@ -98,7 +98,7 @@ cost = res.fun
 # Print theta to screen
 print('Cost at theta found by minimize: %f' % cost)
 print('theta:')
-print(theta)
+for t in theta: print(' %f ' % t)
 
 # Plot Boundary
 fig = plotDecisionBoundary(theta, X, y)
