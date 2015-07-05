@@ -17,7 +17,7 @@ def displayData(X, example_width=None):
 
     # Compute number of items to display
     display_rows = int(sqrt(m))
-    display_cols = (m + display_rows - 1) / display_rows
+    display_cols = int((m + display_rows - 1) / display_rows)
 
     # Between images padding
     pad = 1
@@ -29,9 +29,9 @@ def displayData(X, example_width=None):
     # Copy each example into a patch on the display array
     curr_ex = 0
     for j in range(display_rows):
-    	for i in range(display_cols):
+        for i in range(display_cols):
             if curr_ex >= m:
-    			break
+                break
             # Copy the patch
 
             # Get the max value of the patch
@@ -41,8 +41,8 @@ def displayData(X, example_width=None):
             display_array[pos_y : pos_y + example_height, pos_x : pos_x + example_width] = \
                 reshape(X[curr_ex, :], (example_height, example_width), order='F') / max_val
             curr_ex += 1
-    	if curr_ex >= m:
-    		break
+        if curr_ex >= m:
+            break
 
     # Display Image
     imshow(display_array, interpolation='none', cmap=cm.gray)

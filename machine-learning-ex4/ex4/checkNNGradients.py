@@ -36,18 +36,18 @@ def checkNNGradients(lambda_=0):
 
     # Visually examine the two gradient computations.  The two columns
     # you get should be very similar.
-    print column_stack((numgrad, grad))
-    print 'The above two columns you get should be very similar.'
-    print '(Left-Your Numerical Gradient, Right-Analytical Gradient)\n'
+    print(column_stack((numgrad, grad)))
+    print('The above two columns you get should be very similar.')
+    print('(Left-Your Numerical Gradient, Right-Analytical Gradient)\n')
 
     # Evaluate the norm of the difference between two solutions.
     # If you have a correct implementation, and assuming you used EPSILON = 0.0001
     # in computeNumericalGradient.m, then diff below should be less than 1e-9
     diff = linalg.norm(numgrad-grad) / linalg.norm(numgrad+grad)
 
-    print 'If your backpropagation implementation is correct, then'
-    print 'the relative difference will be small (less than 1e-9).\n'
-    print 'Relative Difference: %g\n' % diff
+    print('If your backpropagation implementation is correct, then')
+    print('the relative difference will be small (less than 1e-9).\n')
+    print('Relative Difference: %g\n' % diff)
 
 
 def debugInitializeWeights(fan_out, fan_in):
