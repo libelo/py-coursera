@@ -1,4 +1,5 @@
 from numpy import *
+from sigmoid import sigmoid
 
 def predict(theta, X):
     #PREDICT Predict whether the label is 0 or 1 using learned logistic
