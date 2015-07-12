@@ -26,7 +26,7 @@ def predict(Theta1, Theta2, X):
 
 
 
-
+    p = argmax(dot(Theta2,row_stack([ones(m), sigmoid(dot(Theta1,row_stack([ones(m), X.T])))])), 0) + 1
 
 
 

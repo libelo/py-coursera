@@ -50,8 +50,12 @@ def oneVsAll(X, y, num_labels, lambda_):
 
 
 
-
-
+    for c in range(1, num_labels+1):
+        initial_theta = zeros(n + 1)
+        res = optimize.minimize(lrCostFunction, initial_theta, args=(X,(y == c),lambda_), \
+                                        method='CG', jac=True, options={'maxiter':50})
+        theta, cost = res.x, res.fun
+        all_theta[c-1,:] = theta
 
 
 

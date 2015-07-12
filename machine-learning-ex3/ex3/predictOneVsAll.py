@@ -32,7 +32,7 @@ def predictOneVsAll(all_theta, X):
     #       for each row.
     #
 
-
+    p = argmax(dot(all_theta, X.T), 0) + 1
 
 
 
