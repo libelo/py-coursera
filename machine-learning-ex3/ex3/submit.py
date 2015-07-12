@@ -49,7 +49,7 @@ def output(partId):
     if partId == '1':
         J, grad = lrCostFunction(array([0.25, 0.5, -0.5]), X, y, 0.1)
         out = sprintf('%0.5f ', J)
-        return [out, sprintf('%0.5f ', grad)]
+        return out + sprintf('%0.5f ', grad)
     elif partId == '2':
         return sprintf('%0.5f ', oneVsAll(Xm, ym, 4, 0.1))
     elif partId == '3':
