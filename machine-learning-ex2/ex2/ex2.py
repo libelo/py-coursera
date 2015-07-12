@@ -89,7 +89,7 @@ input()
 
 #  Run minimize to obtain the optimal theta
 res = optimize.minimize(costFunction, initial_theta, args=(X,y), \
-                        method='BFGS', jac=True, options={'maxiter':400})
+                        method='TNC', jac=True, options={'maxiter':400})
 
 #  Extract theta and the cost from the result of minimize
 theta = res.x

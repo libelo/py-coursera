@@ -1,4 +1,4 @@
-from costFunction import costFunction
+from sigmoid import sigmoid
 from numpy import *
 
 def costFunctionReg(theta, X, y, lambda_):
