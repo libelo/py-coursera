@@ -39,7 +39,7 @@ def submit():
 def output(partId):
     # Random Test Cases
     X = column_stack((ones(20), exp(1) * sin(arange(1, 21, 1)), exp(0.5) * cos(arange(1, 21, 1))))
-    y = sin(X[:,0] + X[:,1]) > 0
+    y = (sin(X[:,0] + X[:,1]) > 0).astype(int)
     Xm = array([[-1, -1], [-1, -2], [-2, -1], [-2, -2], [1, 1], [1, 2], [2, 1], [2, 2],
       [-1, 1], [-1, 2], [-2, 1], [-2, 2], [1, -1], [1, -2], [-2, -1], [-2, -2]])
     ym = array([1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4])
