@@ -24,9 +24,10 @@ def costFunction(theta, X, y):
     #
 
 
+    J = 1/m * sum(-y * log(sigmoid(dot(X, theta))) - (1-y) * log(1-sigmoid(dot(X, theta))))
 
 
-
+    grad = 1/m * dot(sigmoid(dot(X, theta)) - y, X)
 
 
 

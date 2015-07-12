@@ -42,7 +42,9 @@ def lrCostFunction(theta, X, y, lambda_):
 
 
 
+    J = 1/m * sum(-y*log(sigmoid(dot(X, theta))) - (1-y)*log(1-sigmoid(dot(X, theta)))) + lambda_/(2*m)*sum(theta[1:]**2)
 
+    grad = 1/m * X.T * (sigmoid(dot(X, theta)) - y) + lambda_/m * concatenate((zeros(1), theta[1:]))
 
 
 

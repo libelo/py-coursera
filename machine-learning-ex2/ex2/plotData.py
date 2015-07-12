@@ -17,12 +17,12 @@ def plotData(X, y):
     #
 
 
-
-
-
-
-
-
+    pos = y==1
+    neg = y==0
+    plot(X[pos, 0], X[pos, 1], 'k+', linewidth=2, markersize=7) # linewidth doesn't work
+    plot(X[neg, 0], X[neg, 1], 'ko', markerfacecolor='y', markersize=7)
+    
+    
 
     # ============================================================
 

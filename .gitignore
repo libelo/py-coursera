@@ -37,3 +37,5 @@ ml.sublime-workspace
 *.sublime-workspace
 
 *.pkl
+
+*.ipynb
