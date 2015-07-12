@@ -43,7 +43,7 @@ def oneVsAll(X, y, num_labels, lambda_):
     #     # Run minimize to obtain the optimal theta
     #     # This function will return a Result object. Theta can be retrieved in
     #     # the 'x' attribute and the cost in the 'fun' attribute.
-    #     res = optimize.minimize(lrCostFunction, initial_theta, args=(X,(y == c),lambda_), \
+    #     res = optimize.minimize(lrCostFunction, initial_theta, args=(X,(y == c).astype(int),lambda_), \
     #                             method='CG', jac=True, options={'maxiter':50})
     #     theta, cost = res.x, res.fun
 
