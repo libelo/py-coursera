@@ -43,8 +43,8 @@ def output(partId):
     Xm = array([[-1, -1], [-1, -2], [-2, -1], [-2, -2], [1, 1], [1, 2], [2, 1], [2, 2],
       [-1, 1], [-1, 2], [-2, 1], [-2, 2], [1, -1], [1, -2], [-2, -1], [-2, -2]])
     ym = array([1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4])
-    t1 = sin(arange(1, 25, 2).reshape(4, 3))
-    t2 = sin(arange(1, 41, 2).reshape(4, 5))
+    t1 = sin(arange(1, 25, 2).reshape(4, 3, order='F'))
+    t2 = cos(arange(1, 41, 2).reshape(4, 5, order='F'))
     
     if partId == '1':
         J, grad = lrCostFunction(array([0.25, 0.5, -0.5]), X, y, 0.1)
