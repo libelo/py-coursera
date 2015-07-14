@@ -120,6 +120,6 @@ fig.show()
 # Compute accuracy on our training set
 p = predict(theta, X)
 
-print('Train Accuracy: %f' % (mean(p == y) * 100))
+print('Train Accuracy: %f\n' % (mean(p == y) * 100))
 
 

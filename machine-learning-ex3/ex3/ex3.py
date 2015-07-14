@@ -61,7 +61,7 @@ input()
 #  digit dataset.
 #
 
-print('Training One-vs-All Logistic Regression...')
+print('\nTraining One-vs-All Logistic Regression...')
 
 lambda_ = 0.1
 all_theta = oneVsAll(X, y, num_labels, lambda_)
@@ -74,5 +74,5 @@ input()
 #  After ...
 pred = predictOneVsAll(all_theta, X)
 
-print('Training Set Accuracy: %f' % (mean(pred == y) * 100))
+print('\nTraining Set Accuracy: %f' % (mean(pred == y) * 100))
 
