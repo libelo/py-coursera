@@ -1,6 +1,6 @@
 from numpy import *
-
 from nnCostFunction import nnCostFunction
+seterr(invalid='ignore')
 
 def checkNNGradients(lambda_=0):
     #CHECKNNGRADIENTS Creates a small neural network to check the
@@ -36,7 +36,7 @@ def checkNNGradients(lambda_=0):
 
     # Visually examine the two gradient computations.  The two columns
     # you get should be very similar.
-    print(column_stack((numgrad, grad)))
+    print(column_stack((numgrad, grad)), '\n')
     print('The above two columns you get should be very similar.')
     print('(Left-Your Numerical Gradient, Right-Analytical Gradient)\n')
 
@@ -46,8 +46,8 @@ def checkNNGradients(lambda_=0):
     diff = linalg.norm(numgrad-grad) / linalg.norm(numgrad+grad)
 
     print('If your backpropagation implementation is correct, then')
-    print('the relative difference will be small (less than 1e-9).\n')
-    print('Relative Difference: %g\n' % diff)
+    print('the relative difference will be small (less than 1e-9).')
+    print('\nRelative Difference: %g' % diff)
 
 
 def debugInitializeWeights(fan_out, fan_in):
