@@ -234,7 +234,7 @@ Theta1 = reshape(nn_params[:hidden_layer_size * (input_layer_size + 1)],
 Theta2 = reshape(nn_params[hidden_layer_size * (input_layer_size + 1):],
                  (num_labels, (hidden_layer_size + 1)), order='F')
 
-print('\nProgram paused. Press enter to continue.')
+print('Program paused. Press enter to continue.')
 input()
 
 
