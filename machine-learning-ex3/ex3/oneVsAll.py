@@ -47,13 +47,21 @@ def oneVsAll(X, y, num_labels, lambda_):
     #                             method='CG', jac=True, options={'maxiter':50})
     #     theta, cost = res.x, res.fun
 
+    costFunction = lambda p: lrCostFunction(p, X, y, lambda_)
 
-
+    class Callback(object):
+        def __init__(self):
+            self.it = 0
+        def __call__(self, p):
+            self.it += 1
+            print("Iteration %5d | Cost: %e" % (self.it, costFunction(p)[0]))
+        def __del__(self):
+            print('')
 
     for c in range(1, num_labels+1):
         initial_theta = zeros(n + 1)
         res = optimize.minimize(lrCostFunction, initial_theta, args=(X,(y == c).astype(int),lambda_), \
-                                        method='CG', jac=True, options={'maxiter':50})
+                                        method='CG', jac=True, options={'maxiter':50}, callback=Callback())
         theta, cost = res.x, res.fun
         all_theta[c-1,:] = theta
 
