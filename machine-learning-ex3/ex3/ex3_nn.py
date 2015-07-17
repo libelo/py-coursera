@@ -57,7 +57,7 @@ input()
 # In this part of the exercise, we load some pre-initialized
 # neural network parameters.
 
-print('\nLoading Saved Neural Network Parameters ...')
+print('Loading Saved Neural Network Parameters ...')
 
 # Load the weights into variables Theta1 and Theta2
 ex3weights = loadmat('ex3weights.mat')
@@ -86,7 +86,7 @@ fig = figure()
 
 for i in rp:
     # Display
-    print('\nDisplaying Example Image')
+    print('Displaying Example Image')
     displayData(column_stack(X[i, :]))
     fig.show()
 

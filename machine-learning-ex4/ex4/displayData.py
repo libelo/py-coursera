@@ -45,7 +45,7 @@ def displayData(X, example_width=None):
             break
 
     # Display Image
-    imshow(display_array, interpolation='none', cmap=cm.gray)
+    imshow(display_array, cmap=cm.gray)
 
     # Do not show axis
     axis('off')

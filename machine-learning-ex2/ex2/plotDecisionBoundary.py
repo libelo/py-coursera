@@ -39,7 +39,7 @@ def plotDecisionBoundary(theta, X, y):
         # Evaluate z = theta*x over the grid
         for i in range(len(u)):
             for j in range(len(v)):
-                z[i,j] = mapFeature(u[i], v[j]) * theta
+                z[i,j] = dot(mapFeature(u[i], v[j]), theta)
 
         z = z.T # important to transpose z before calling contour
 

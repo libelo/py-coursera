@@ -40,7 +40,7 @@ num_labels = 10           # 10 labels, from 1 to 10
 #
 
 # Load Training Data
-print('Loading and Visualizing Data ...')
+print('Loading and Visualizing Data ...\n')
 
 ex4data1 = loadmat('ex4data1.mat')
 X = ex4data1['X']
@@ -62,7 +62,7 @@ input()
 # In this part of the exercise, we load some pre-initialized
 # neural network parameters.
 
-print('\nLoading Saved Neural Network Parameters ...')
+print('Loading Saved Neural Network Parameters ...')
 
 # Load the weights into variables Theta1 and Theta2
 ex4weights = loadmat('ex4weights.mat')
@@ -96,7 +96,7 @@ J, _ = nnCostFunction(nn_params, input_layer_size, hidden_layer_size,
 print('Cost at parameters (loaded from ex4weights): %f ' % J)
 print('(this value should be about 0.287629)')
 
-print('Program paused. Press enter to continue.')
+print('\nProgram paused. Press enter to continue.')
 input()
 
 ## =============== Part 4: Implement Regularization ===============
@@ -104,7 +104,7 @@ input()
 #  continue to implement the regularization with the cost.
 #
 
-print('\nChecking Cost Function (w/ Regularization) ...')
+print('Checking Cost Function (w/ Regularization) ...')
 
 # Weight regularization parameter (we set this to 1 here).
 lambda_ = 1
@@ -124,13 +124,14 @@ input()
 #  code in the sigmoidGradient.py file.
 #
 
-print('\nEvaluating sigmoid gradient...')
+print('Evaluating sigmoid gradient...')
 
 g = sigmoidGradient(array([1, -0.5, 0, 0.5, 1]))
-print('Sigmoid gradient evaluated at [1 -0.5 0 0.5 1]:')
-print(g)
+print('Sigmoid gradient evaluated at [1 -0.5 0 0.5 1]:\n  ', end='')
+for gg in g: print('%f ' % gg, end='')
+print('\n')
 
-print('\nProgram paused. Press enter to continue.')
+print('Program paused. Press enter to continue.')
 input()
 
 ## ================ Part 6: Initializing Pameters ================
@@ -139,7 +140,7 @@ input()
 #  implementing a function to initialize the weights of the neural network
 #  (randInitializeWeights.py)
 
-print('\nInitializing Neural Network Parameters ...')
+print('Initializing Neural Network Parameters ...')
 
 initial_Theta1 = randInitializeWeights(input_layer_size, hidden_layer_size)
 initial_Theta2 = randInitializeWeights(hidden_layer_size, num_labels)
@@ -159,7 +160,7 @@ print('\nChecking Backpropagation...')
 #  Check gradients by running checkNNGradients
 checkNNGradients()
 
-print('Program paused. Press enter to continue.')
+print('\nProgram paused. Press enter to continue.')
 input()
 
 
@@ -168,7 +169,7 @@ input()
 #  continue to implement the regularization with the cost and gradient.
 #
 
-print('\nChecking Backpropagation (w/ Regularization) ...')
+print('Checking Backpropagation (w/ Regularization) ...')
 
 #  Check gradients by running checkNNGradients
 lambda_ = 3;
@@ -192,7 +193,7 @@ input()
 #  these advanced optimizers are able to train our cost functions efficiently
 #  as long as we provide them with the gradient computations.
 #
-print('\nTraining Neural Network...')
+print('Training Neural Network...')
 
 #  After you have completed the assignment, change the maxiter to a larger
 #  value to see how more training helps.
@@ -217,6 +218,8 @@ class Callback(object):
     def __call__(self, p):
         self.it += 1
         print("Iteration %5d | Cost: %e" % (self.it, costFunction(p)[0]))
+    def __del__(self):
+        print()
 
 res = minimize(costFunction, initial_nn_params, method='CG',
                jac=True, options=options, callback=Callback())
@@ -231,7 +234,7 @@ Theta1 = reshape(nn_params[:hidden_layer_size * (input_layer_size + 1)],
 Theta2 = reshape(nn_params[hidden_layer_size * (input_layer_size + 1):],
                  (num_labels, (hidden_layer_size + 1)), order='F')
 
-print('Program paused. Press enter to continue.')
+print('\nProgram paused. Press enter to continue.')
 input()
 
 
@@ -240,13 +243,13 @@ input()
 #  displaying the hidden units to see what features they are capturing in
 #  the data.
 
-print('\nVisualizing Neural Network...')
+print('Visualizing Neural Network...')
 
 fig = figure()
 displayData(Theta1[:,1:])
 fig.show()
 
-print('Program paused. Press enter to continue.')
+print('\nProgram paused. Press enter to continue.')
 input()
 
 ## ================= Part 10: Implement Predict =================
@@ -257,6 +260,6 @@ input()
 
 pred = predict(Theta1, Theta2, X)
 
-print('\nTraining Set Accuracy: %f' % (mean(pred == y) * 100))
+print('Training Set Accuracy: %f' % (mean(pred == y) * 100))
 
 
