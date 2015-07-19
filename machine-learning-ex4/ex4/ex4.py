@@ -40,7 +40,7 @@ num_labels = 10           # 10 labels, from 1 to 10
 #
 
 # Load Training Data
-print('Loading and Visualizing Data ...\n')
+print('Loading and Visualizing Data ...')
 
 ex4data1 = loadmat('ex4data1.mat')
 X = ex4data1['X']
