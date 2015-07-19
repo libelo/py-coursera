@@ -16,7 +16,11 @@ def polyFeatures(X, p):
     #
     #
 
+    augmented_poly = X
+    for i in range(2,p+1):
+        augmented_poly = column_stack([augmented_poly, X**i])
 
+    X_poly = augmented_poly
     
 
     # =========================================================================

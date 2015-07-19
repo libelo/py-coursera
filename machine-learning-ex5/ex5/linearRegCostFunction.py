@@ -21,8 +21,8 @@ def linearRegCostFunction(X, y, theta, lambda_):
     #               You should set J to the cost and grad to the gradient.
     #
 
-
-    
+    J = sum((dot(X,theta) - y)**2)/(2*m) + lambda_/(2*m)*sum(theta[1:]**2)
+    grad = 1/m*dot(X.T,(dot(X, theta)-y)) + lambda_/m*hstack([array([0]), theta[1:]])
     
 
     # =========================================================================
