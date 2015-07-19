@@ -1,5 +1,6 @@
 from numpy import *
 from sigmoid import sigmoid
+from sigmoidGradient import sigmoidGradient
 
 def nnCostFunction(nn_params,
                    input_layer_size,
