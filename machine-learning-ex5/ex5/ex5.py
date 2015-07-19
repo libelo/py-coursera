@@ -40,7 +40,7 @@ def addOnes(X):
 #
 
 # Load Training Data
-print 'Loading and Visualizing Data ...'
+print('Loading and Visualizing Data ...')
 
 # Load from ex5data1:
 # You will have X, y, Xval, yval, Xtest, ytest in your environment
@@ -61,8 +61,8 @@ plot(X, y, 'rx', markersize=10, linewidth=1.5)
 xlabel('Change in water level (x)')
 ylabel('Water flowing out of the dam (y)')
 fig.show()
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## =========== Part 2: Regularized Linear Regression Cost =============
 #  You should now implement the cost function for regularized linear
@@ -72,11 +72,11 @@ raw_input()
 theta = array([1., 1.])
 J, _ = linearRegCostFunction(addOnes(X), y, theta, 1.)
 
-print 'Cost at theta = [1, 1]: %f ' % J
-print '(this value should be about 303.993192)'
+print('Cost at theta = [1, 1]: %f ' % J)
+print('(this value should be about 303.993192)')
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## =========== Part 3: Regularized Linear Regression Gradient =============
 #  You should now implement the gradient for regularized linear
@@ -86,11 +86,11 @@ raw_input()
 theta = array([1., 1.])
 J, grad = linearRegCostFunction(addOnes(X), y, theta, 1.)
 
-print 'Gradient at theta = [1, 1]:  [%f, %f]' % (grad[0], grad[1])
-print '(this value should be about [-15.303016, 598.250744])'
+print('Gradient at theta = [1, 1]:  [%f, %f]' % (grad[0], grad[1]))
+print('(this value should be about [-15.303016, 598.250744])')
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 
 ## =========== Part 4: Train Linear Regression =============
@@ -105,7 +105,7 @@ raw_input()
 #  Train linear regression with lambda = 0
 lambda_ = 0.
 theta = trainLinearReg(addOnes(X), y, lambda_)
-print theta
+print(theta)
 #  Plot fit over the data
 fig = figure()
 plot(X, y, 'rx', markersize=10, linewidth=1.5)
@@ -116,8 +116,8 @@ plot(X, dot(addOnes(X), theta), '--', linewidth=2)
 hold(False)
 fig.show()
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 
 ## =========== Part 5: Learning Curve for Linear Regression =============
@@ -140,12 +140,12 @@ ylabel('Error')
 axis([0, 13, 0, 150])
 fig.show()
 
-print '# Training Examples\tTrain Error\tCross Validation Error'
+print('# Training Examples\tTrain Error\tCross Validation Error')
 for i in range(m):
-    print '  \t%d\t\t%f\t%f' % (i+1, error_train[i], error_val[i])
+    print('  \t%d\t\t%f\t%f' % (i+1, error_train[i], error_val[i]))
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## =========== Part 6: Feature Mapping for Polynomial Regression =============
 #  One solution to this is to use polynomial regression. You should now
@@ -169,11 +169,11 @@ X_poly_val = polyFeatures(Xval, p);
 X_poly_val = (X_poly_val - mu) / sigma
 X_poly_val = addOnes(X_poly_val)
 
-print 'Normalized Training Example 1:'
-print X_poly[0, :]
+print('Normalized Training Example 1:')
+for x_poly in X_poly[0, :]: print('  %f  ' % x_poly)
 
-print '\nProgram paused. Press enter to continue.'
-raw_input()
+print('\nProgram paused. Press enter to continue.')
+input()
 
 
 ## =========== Part 7: Learning Curve for Polynomial Regression =============
@@ -205,13 +205,13 @@ axis([0, 13, 0, 100])
 legend(('Train', 'Cross Validation'))
 fig2.show()
 
-print 'Polynomial Regression (lambda = %f)\n' % lambda_
-print '# Training Examples\tTrain Error\tCross Validation Error'
+print('Polynomial Regression (lambda = %f)\n' % lambda_)
+print('# Training Examples\tTrain Error\tCross Validation Error')
 for i in range(m):
-    print '  \t%d\t\t%f\t%f' % (i+1, error_train[i], error_val[i])
+    print('  \t%d\t\t%f\t%f' % (i+1, error_train[i], error_val[i]))
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
 
 ## =========== Part 8: Validation for Selecting Lambda =============
 #  You will now implement validationCurve to test various values of
@@ -230,9 +230,9 @@ xlabel('lambda')
 ylabel('Error')
 fig.show()
 
-print 'lambda\t\tTrain Error\tValidation Error'
+print('lambda\t\tTrain Error\tValidation Error')
 for i in range(len(lambda_vec)):
-    print ' %f\t%f\t%f' % (lambda_vec[i], error_train[i], error_val[i])
+    print(' %f\t%f\t%f' % (lambda_vec[i], error_train[i], error_val[i]))
 
-print 'Program paused. Press enter to continue.'
-raw_input()
+print('Program paused. Press enter to continue.')
+input()
