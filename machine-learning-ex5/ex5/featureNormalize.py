@@ -1,4 +1,5 @@
 from numpy import *
+seterr(invalid='ignore')
 
 def featureNormalize(X):
     #FEATURENORMALIZE Normalizes the features in X

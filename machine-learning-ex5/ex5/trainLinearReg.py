@@ -22,8 +22,8 @@ def trainLinearReg(X, y, lambda_):
     counter = count()
     # Minimize using CG algorithm
     res = minimize(costFunction, initial_theta, method='CG', jac=True,
-                   options={'maxiter': 200}, callback=lambda _:counter.next())
+                   options={'maxiter': 200}, callback=lambda _:next(counter))
     theta = res.x
-    print "Iteration %5d | Cost: %e" % (counter.next(), res.fun)
+    print("Iteration %5d | Cost: %e" % (next(counter), res.fun))
 
     return theta
