@@ -1,5 +1,6 @@
 from numpy import *
 from trainLinearReg import trainLinearReg
+from linearRegCostFunction import linearRegCostFunction
 
 def learningCurve(X, y, Xval, yval, lambda_):
     #LEARNINGCURVE Generates the train and cross validation set errors needed
