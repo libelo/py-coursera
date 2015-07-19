@@ -1,5 +1,6 @@
 from numpy import *
 from trainLinearReg import trainLinearReg
+from linearRegCostFunction import linearRegCostFunction
 
 def validationCurve(X, y, Xval, yval):
     #VALIDATIONCURVE Generate the train and validation errors needed to
