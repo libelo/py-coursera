@@ -67,11 +67,36 @@ def nnCostFunction(nn_params,
     #
 
 
+    predict = sigmoid(dot(Theta2, row_stack([ones(m), sigmoid(dot(Theta1, row_stack([ones(m), X.T])))])))
+    cost = 0
+    for i in range(m):
+        actual = zeros(num_labels)
+        actual[y[i] - 1] = 1
+        cost = cost + sum(-actual*log(predict[:,i])-(1-actual)*log(1-predict[:,i]))
+    J = 1/m * cost + lambda_/(2*m) * (sum(sum(Theta1[:,1:]**2)) + sum(sum(Theta2[:,1:]**2)))
+    
+    for i in range(m):
+        actual = zeros(num_labels)
+        actual[y[i] - 1] = 1; 
+        a_1 = X[i,:]
+        z_2 = dot(Theta1, concatenate([array([1]), a_1]))
+        a_2 = sigmoid(z_2)
+        z_3 = dot(Theta2, concatenate([array([1]), a_2]))
+        a_3 = sigmoid(z_3)
+        
+        delta_3 = a_3 - actual
+        # import pdb; pdb.set_trace()
+        delta_2 = dot(Theta2.T, delta_3) * concatenate([array([1]), sigmoidGradient(z_2)])
+        Theta1_grad = Theta1_grad + outer(delta_2[1:], concatenate([array([1]), a_1]))
+        Theta2_grad = Theta2_grad + outer(delta_3, concatenate([array([1]), a_2]))
+    
+    Theta1_grad = 1/m*Theta1_grad + lambda_/m*column_stack([zeros(size(Theta1,0)), Theta1[:,1:]])
+    Theta2_grad = 1/m*Theta2_grad + lambda_/m*column_stack([zeros(size(Theta2,0)), Theta2[:,1:]])
 
     
     
     
-    
+
     
     
     
